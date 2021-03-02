@@ -1,0 +1,31 @@
+#update_db_status_bar_container {
+    width: 50%;
+    background-color: #ddd;
+    float: left;
+}
+
+.toggle_debug_link_container {
+    clear: left;
+}
+
+#update_db_status_bar, #update_db_failure_indicator {
+    height: 35px;
+    text-align: center;
+    line-height: 32px;
+    color: black;
+    float:left;
+}
+
+#update_db_status_bar {
+    width: 1%;
+    background-color: #4CAF50;
+}
+
+#update_db_failure_indicator {
+    width: 0;
+    background-color: red;
+}
+
+#update_db_status_details_block {
+    display: none;
+}
