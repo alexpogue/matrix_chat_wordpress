@@ -1,0 +1,25 @@
+{
+	"name": "matrix-chat-plugin",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Wordpress plugin enabling chat via Matrix.org",
+	"author": "Alex Pogue",
+	"license": "MIT",
+	"keywords": [
+		"WordPress",
+		"Matrix.org"
+	],
+	"homepage": "https://alexpogue.com",
+	"repository": "git+https://github.com/alexpogue/matrix_chat_wordpress.git",
+	"main": "build/index.js",
+	"devDependencies": {
+		"@wordpress/scripts": "^9.0.0"
+	},
+	"scripts": {
+		"build": "wp-scripts build",
+		"format:js": "wp-scripts format-js",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start"
+	}
+}
