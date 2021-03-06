@@ -74,6 +74,18 @@ registerBlockType('matrix-chat-plugin/matrix-chat-plugin-block', {
                     </Button>
 
                     <TextControl
+                        label="Room name"
+                        className="room-name-textcontrol"
+                    />
+                    <Button isPrimary className="join-room-button">
+                        Join
+                    </Button>
+                    <Button isPrimary className="create-room-button">
+                        Create
+                    </Button>
+
+
+                    <TextControl
                         label="Chat message"
                         className="chat-message"
                         value={defaultMessage}
@@ -120,18 +132,37 @@ registerBlockType('matrix-chat-plugin/matrix-chat-plugin-block', {
                     Register
                 </Button>
 
+                <TextControl
+                    label="Room name"
+                    className="room-name-textcontrol"
+                />
+                <span className="matrix-chat-room-input-errors"></span><br />
+                <Button isPrimary className="join-room-button">
+                    Join
+                </Button>
+                <Button isPrimary className="create-room-button">
+                    Create
+                </Button>
+
                 <ul className="matrix-chat-output-list">
                 </ul>
 
+                <span className="matrix-chat-logged-in-user"></span><br />
+                <span className="matrix-chat-active-room"></span><br />
                 <TextControl
                     label="Chat message"
                     className="chat-message-textcontrol"
                     value={defaultMessage}
                 />
-                <span className="matrix-chat-input-errors"></span>
+                <span className="matrix-chat-input-errors"></span><br />
                 <Button isPrimary className="send-message-button">
                     {__("Send message")}
                 </Button>
+
+                <Button isPrimary className="get-room-state-button">
+                    Get state
+                </Button>
+                <span className="matrix-chat-get-state-errors"></span>
             </div>
         );
     }
