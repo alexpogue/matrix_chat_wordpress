@@ -71,12 +71,16 @@ function matrix_enqueue_scripts() {
 
 }
 
+function matrix_get_matrix_host() {
+    return "matrix.alexpogue.com:8008";
+}
+
 function matrix_send_message() {
     $data = $_POST;
 
     $curl = curl_init();
 
-    $matrix_host = getenv("MATRIX_HOST");
+    $matrix_host = matrix_get_matrix_host();
 
     $room_id = urlencode($data["room_id"]);
     $url = "http://" . $matrix_host . "/_matrix/client/r0/rooms/" . $room_id . "/send/m.room.message";
@@ -106,7 +110,7 @@ function matrix_register_user() {
 
     $curl = curl_init();
 
-    $matrix_host = getenv("MATRIX_HOST");
+    $matrix_host = matrix_get_matrix_host();
 
     $url = "http://" . $matrix_host . "/_matrix/client/r0/register";
 
@@ -135,7 +139,7 @@ function matrix_login_user() {
 
     $curl = curl_init();
 
-    $matrix_host = getenv("MATRIX_HOST");
+    $matrix_host = matrix_get_matrix_host();
 
     $url = "http://" . $matrix_host . "/_matrix/client/r0/login";
 
@@ -162,7 +166,7 @@ function matrix_create_room() {
 
     $curl = curl_init();
 
-    $matrix_host = getenv("MATRIX_HOST");
+    $matrix_host = matrix_get_matrix_host();
 
     $url = "http://" . $matrix_host . "/_matrix/client/r0/createRoom";
 
@@ -190,7 +194,7 @@ function matrix_join_room() {
 
     $curl = curl_init();
 
-    $matrix_host = getenv("MATRIX_HOST");
+    $matrix_host = matrix_get_matrix_host();
 
     $room_id_or_alias = urlencode($data["room_id_or_alias"]);
     $url = "http://" . $matrix_host . "/_matrix/client/r0/rooms/" . $room_id_or_alias . "/join";
@@ -215,7 +219,7 @@ function matrix_initial_get_messages() {
 
     $curl = curl_init();
 
-    $matrix_host = getenv("MATRIX_HOST");
+    $matrix_host = matrix_get_matrix_host();
 
     $room_id = $data["room_id"];
     $url = "http://" . $matrix_host . "/_matrix/client/r0/sync";
@@ -294,7 +298,7 @@ function matrix_initial_get_messages() {
 /*
     $curl = curl_init();
 
-    $matrix_host = getenv("MATRIX_HOST");
+    $matrix_host = matrix_get_matrix_host();
 
     $room_id = $data["room_id"];
     $url = "http://" . $matrix_host . "/_matrix/client/r0/sync";
